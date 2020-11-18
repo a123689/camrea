@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.example.dat.democamera.AutoFitTextureView
+        android:id="@+id/texture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/control"
+        android:layout_alignParentTop="true" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutGrid"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_above="@id/control"
+        android:layout_height="match_parent">
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.33"
+            android:layout_height="1dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.67"
+            android:layout_height="1dp"/>
+        <View
+            android:layout_width="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="0.33"
+            android:layout_height="match_parent"/>
+        <View
+            android:layout_width="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            app:layout_constraintHorizontal_bias="0.67"
+            android:layout_height="match_parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/ivGrid"
+        android:layout_width="36dp"
+        android:src="@drawable/ic_baseline_grid_off_24"
+        android:layout_centerHorizontal="true"
+        android:padding="6dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="36dp"/>
+
+    <ImageView
+        android:id="@+id/ivFlash"
+        android:layout_width="36dp"
+        android:src="@drawable/ic_flash_off"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:padding="6dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="36dp"/>
+    <ImageView
+        android:id="@+id/ivAB"
+        android:layout_width="36dp"
+        android:padding="6dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_baseline_stay_current_landscape_24"
+        android:layout_height="36dp"/>
+    <FrameLayout
+        android:id="@+id/control"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/control_background">
+
+        <ImageView
+            android:id="@+id/picture"
+            android:src="@drawable/ic_btn_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/picture" />
+
+        <ImageButton
+            android:id="@+id/info"
+            android:contentDescription="@string/description_info"
+            style="@android:style/Widget.Material.Light.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:padding="20dp"
+            android:visibility="gone"
+            />
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="36dp"
+            android:padding="6dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_baseline_image_24"
+            android:layout_height="36dp"/>
+
+    </FrameLayout>
+
+</RelativeLayout>
