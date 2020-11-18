@@ -732,9 +732,7 @@ public class CameraFragment : Fragment(), View.OnClickListener, ActivityCompat.O
             val captureBuilder = mCameraDevice!!.createCaptureRequest(CameraDevice.TEMPLATE_STILL_CAPTURE)
 
             captureBuilder.addTarget(mImageReader!!.surface)
-            for (i in 0..9) {
-                burst_capture_requests.add(mPreviewRequestBuilder!!.build())
-            }
+            burst_capture_requests.add(mPreviewRequestBuilder!!.build())
             // Use the same AE and AF modes as the preview.
             captureBuilder.set(CaptureRequest.CONTROL_AF_MODE,
                     CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE)
@@ -755,7 +753,7 @@ public class CameraFragment : Fragment(), View.OnClickListener, ActivityCompat.O
             }
             mCaptureSession!!.stopRepeating()
             mCaptureSession!!.abortCaptures()
-            mCaptureSession!!.captureBurst(burst_capture_requests, CaptureCallback, null)
+            mCaptureSession!!.capture(captureBuilder.build(), CaptureCallback, null)
         } catch (e: CameraAccessException) {
             e.printStackTrace()
         }
